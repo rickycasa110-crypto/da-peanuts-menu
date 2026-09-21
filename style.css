@@ -9,12 +9,17 @@
   --ink:#241f1a;
   --muted:#766f66;
   --line:#e5dccd;
+  --gold:#c5a16b;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  background:var(--cream);
+  background:
+    radial-gradient(circle at 8% 18%, rgba(197,161,107,.10) 0 2px, transparent 3px),
+    radial-gradient(circle at 92% 70%, rgba(49,76,59,.08) 0 2px, transparent 3px),
+    var(--cream);
+  background-size:34px 34px, 42px 42px, auto;
   color:var(--ink);
   font-family:"DM Sans",system-ui,sans-serif;
 }
@@ -34,14 +39,19 @@ header{
   object-fit:contain;
   border-radius:8px;
   display:block;
-  margin:0 auto 12px;
+  margin:0 auto 10px;
 }
 .subtitle{
   margin:0;
-  opacity:.85;
+  opacity:.9;
   font-size:13px;
-  letter-spacing:.16em;
+  letter-spacing:.22em;
   text-transform:uppercase;
+}
+.subtitle::before,.subtitle::after{
+  content:"✦";
+  margin:0 9px;
+  color:#d6bb88;
 }
 nav{
   display:flex;
@@ -60,7 +70,9 @@ nav a{
   border-radius:999px;
   padding:8px 13px;
   font-size:13px;
+  background:rgba(255,255,255,.04);
 }
+nav a span{margin-right:3px}
 main{max-width:760px;margin:0 auto;padding:20px 14px 44px}
 .intro{
   text-align:center;
@@ -70,23 +82,44 @@ main{max-width:760px;margin:0 auto;padding:20px 14px 44px}
   font-family:"Playfair Display",serif;
   font-size:34px;
   margin:0 0 5px;
+  color:var(--forest);
+}
+.intro h1::after{
+  content:"✦";
+  display:block;
+  font-family:system-ui,sans-serif;
+  font-size:15px;
+  color:var(--gold);
+  margin-top:7px;
 }
 .intro p{margin:0;color:var(--muted);font-size:14px}
 .section{
-  background:var(--paper);
+  position:relative;
+  background:rgba(255,253,248,.96);
   border:1px solid var(--line);
   border-radius:18px;
   margin:0 0 16px;
   overflow:hidden;
-  box-shadow:0 3px 14px rgba(48,38,25,.05);
+  box-shadow:0 3px 14px rgba(48,38,25,.06);
+}
+.section::before{
+  content:"";
+  position:absolute;
+  top:0;left:18px;right:18px;
+  height:3px;
+  background:linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 .section h2{
   margin:0;
-  padding:18px 18px 13px;
+  padding:20px 18px 13px;
   font-family:"Playfair Display",serif;
   font-size:25px;
   color:var(--forest);
+  display:flex;
+  align-items:center;
+  gap:9px;
 }
+.section-icon{font-family:system-ui,sans-serif;font-size:22px}
 .items{padding:0 18px 8px}
 .item{
   display:flex;
@@ -97,21 +130,28 @@ main{max-width:760px;margin:0 auto;padding:20px 14px 44px}
 }
 .item-main{min-width:0}
 .item-name{font-weight:700;font-size:16px;margin-bottom:4px}
+.item-name::after{
+  content:"";
+  display:inline-block;
+  width:5px;height:5px;
+  border-radius:50%;
+  background:var(--gold);
+  margin-left:7px;
+  vertical-align:middle;
+}
 .item-desc{color:var(--muted);font-size:13px;line-height:1.45}
-.price{font-weight:700;white-space:nowrap;font-size:15px}
-.empty{
-  padding:0 18px 20px;
-  color:var(--muted);
-  font-size:13px;
-  font-style:italic;
+.price{font-weight:700;white-space:nowrap;font-size:15px;color:var(--forest)}
+.empty{padding:0 18px 20px;color:var(--muted);font-size:13px;font-style:italic}
+footer{text-align:center;padding:10px 20px 34px;color:var(--muted);font-size:12px}
+footer::before{content:"🌲  •  WINE & FOOD  •  ROOFTOP  •  🥝";display:block;margin-bottom:8px;color:var(--forest)}
+@media (min-width:700px){header{position:relative}.item{padding:17px 0}}
+
+.intro-kicker{
+  display:inline-block;
+  color:var(--gold);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.22em;
+  margin-bottom:8px;
 }
-footer{
-  text-align:center;
-  padding:10px 20px 34px;
-  color:var(--muted);
-  font-size:12px;
-}
-@media (min-width:700px){
-  header{position:relative}
-  .item{padding:17px 0}
-}
+.item-desc::first-letter{color:var(--forest)}

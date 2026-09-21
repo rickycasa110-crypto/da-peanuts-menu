@@ -1,11 +1,21 @@
 const nav = document.getElementById("nav");
 const content = document.getElementById("content");
 
+const categoryIcons = {
+  "Colazione": "☕",
+  "Primi": "🍝",
+  "Secondi": "🍕",
+  "Aperitivo": "🥂",
+  "Vini": "🍷"
+};
+
 Object.entries(MENU).forEach(([category, items], index) => {
   const id = `cat-${index}`;
+  const icon = categoryIcons[category] || "✦";
+
   const link = document.createElement("a");
   link.href = `#${id}`;
-  link.textContent = category;
+  link.innerHTML = `<span>${icon}</span> ${category}`;
   nav.appendChild(link);
 
   const section = document.createElement("section");
@@ -13,7 +23,7 @@ Object.entries(MENU).forEach(([category, items], index) => {
   section.id = id;
 
   const title = document.createElement("h2");
-  title.textContent = category;
+  title.innerHTML = `<span class="section-icon">${icon}</span><span>${category}</span>`;
   section.appendChild(title);
 
   if (!items.length) {
@@ -24,6 +34,7 @@ Object.entries(MENU).forEach(([category, items], index) => {
   } else {
     const list = document.createElement("div");
     list.className = "items";
+
     items.forEach(item => {
       const row = document.createElement("article");
       row.className = "item";
@@ -34,7 +45,6 @@ Object.entries(MENU).forEach(([category, items], index) => {
       const name = document.createElement("div");
       name.className = "item-name";
       name.textContent = item.nome || "";
-
       main.appendChild(name);
 
       if (item.descrizione) {
@@ -44,14 +54,17 @@ Object.entries(MENU).forEach(([category, items], index) => {
         main.appendChild(desc);
       }
 
-      const price = document.createElement("div");
-      price.className = "price";
-      price.textContent = item.prezzo || "";
+      if (item.prezzo) {
+        const price = document.createElement("div");
+        price.className = "price";
+        price.textContent = item.prezzo;
+        row.appendChild(price);
+      }
 
-      row.appendChild(main);
-      row.appendChild(price);
+      row.insertBefore(main, row.firstChild);
       list.appendChild(row);
     });
+
     section.appendChild(list);
   }
 
