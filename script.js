@@ -6,6 +6,8 @@ const categoryIcons = {
   "Primi": "🍝",
   "Secondi": "🍕",
   "Aperitivo": "🥂",
+  "Dolci": "🍰",
+  "Experience": "✨",
   "Vini": "🍷"
 };
 

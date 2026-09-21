@@ -36,6 +36,17 @@ const MENU = {
     { nome: "Sgabei", descrizione: "Da accompagnare con le nostre proposte da aperitivo", prezzo: "€ 6,00" }
   ],
 
+
+  "Dolci": [
+    { nome: "Maxibon", descrizione: "", prezzo: "" },
+    { nome: "Tortino al cioccolato", descrizione: "", prezzo: "" }
+  ],
+
+  "Experience": [
+    { nome: "Sunset Jacuzzi", descrizione: "Jacuzzi al tramonto con drink a piacere", prezzo: "" },
+    { nome: "Fire Pit Night", descrizione: "Fuoco a legna con marshmallow da arrostire", prezzo: "" }
+  ],
+
   "Vini": [
     { nome: "Vino al calice", descrizione: "Selezione disponibile al momento", prezzo: "da € 4,50" },
     { nome: "Vino in bottiglia", descrizione: "Selezione di etichette disponibili al momento", prezzo: "da € 18,00" }
