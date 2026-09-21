@@ -1,157 +1,102 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap');
 
 :root{
-  --forest:#24382c;
-  --forest-2:#314c3b;
-  --cream:#f7f1e5;
+  --forest:#174d3a;
+  --forest-2:#235c45;
+  --cream:#f5eedb;
   --paper:#fffdf8;
-  --wood:#b28b61;
-  --ink:#241f1a;
-  --muted:#766f66;
-  --line:#e5dccd;
-  --gold:#c5a16b;
+  --ink:#263027;
+  --muted:#756f64;
+  --line:#e5dccb;
+  --gold:#c9a66b;
+  --olive:#718268;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
   background:
-    radial-gradient(circle at 8% 18%, rgba(197,161,107,.10) 0 2px, transparent 3px),
-    radial-gradient(circle at 92% 70%, rgba(49,76,59,.08) 0 2px, transparent 3px),
+    radial-gradient(circle at 7% 18%, rgba(201,166,107,.12) 0 2px, transparent 3px),
+    radial-gradient(circle at 92% 70%, rgba(23,77,58,.07) 0 2px, transparent 3px),
     var(--cream);
-  background-size:34px 34px, 42px 42px, auto;
+  background-size:34px 34px,42px 42px,auto;
   color:var(--ink);
   font-family:"DM Sans",system-ui,sans-serif;
 }
-header{
-  background:var(--forest);
-  color:white;
-  padding:22px 18px 26px;
-  text-align:center;
-  position:sticky;
-  top:0;
-  z-index:10;
-  box-shadow:0 4px 18px rgba(0,0,0,.12);
-}
-.logo{
-  width:min(320px,82vw);
-  max-height:92px;
-  object-fit:contain;
-  border-radius:8px;
-  display:block;
-  margin:0 auto 10px;
-}
-.subtitle{
-  margin:0;
-  opacity:.9;
-  font-size:13px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-}
-.subtitle::before,.subtitle::after{
-  content:"✦";
-  margin:0 9px;
-  color:#d6bb88;
-}
-nav{
-  display:flex;
-  gap:8px;
-  overflow-x:auto;
-  padding:12px 12px 4px;
-  scrollbar-width:none;
-  background:var(--forest);
-}
-nav::-webkit-scrollbar{display:none}
-nav a{
-  flex:0 0 auto;
-  color:white;
-  text-decoration:none;
-  border:1px solid rgba(255,255,255,.22);
-  border-radius:999px;
-  padding:8px 13px;
-  font-size:13px;
-  background:rgba(255,255,255,.04);
-}
-nav a span{margin-right:3px}
-main{max-width:760px;margin:0 auto;padding:20px 14px 44px}
-.intro{
-  text-align:center;
-  padding:8px 8px 18px;
-}
-.intro h1{
-  font-family:"Playfair Display",serif;
-  font-size:34px;
-  margin:0 0 5px;
-  color:var(--forest);
-}
-.intro h1::after{
-  content:"✦";
-  display:block;
-  font-family:system-ui,sans-serif;
-  font-size:15px;
-  color:var(--gold);
-  margin-top:7px;
-}
-.intro p{margin:0;color:var(--muted);font-size:14px}
-.section{
+.hero{
   position:relative;
-  background:rgba(255,253,248,.96);
-  border:1px solid var(--line);
-  border-radius:18px;
-  margin:0 0 16px;
   overflow:hidden;
-  box-shadow:0 3px 14px rgba(48,38,25,.06);
+  color:var(--forest);
+  text-align:center;
+  padding:18px 12px 0;
+  background:var(--cream);
+  border-bottom:1px solid rgba(23,77,58,.10);
+  box-shadow:0 5px 22px rgba(47,39,27,.07);
 }
-.section::before{
+.hero::before,.hero::after{
   content:"";
   position:absolute;
-  top:0;left:18px;right:18px;
-  height:3px;
-  background:linear-gradient(90deg, transparent, var(--gold), transparent);
+  width:180px;height:180px;
+  background:var(--olive);
+  opacity:.82;
+  border-radius:58% 42% 62% 38%;
+  z-index:0;
 }
-.section h2{
-  margin:0;
-  padding:20px 18px 13px;
-  font-family:"Playfair Display",serif;
-  font-size:25px;
+.hero::before{left:-105px;top:-92px;transform:rotate(25deg)}
+.hero::after{right:-115px;top:-105px;transform:rotate(-25deg)}
+.hero-corner{position:absolute;z-index:1;pointer-events:none}
+.hero-corner::before,.hero-corner::after{content:"";position:absolute;background:var(--forest);border-radius:999px;transform-origin:left center}
+.hero-corner-left{left:8px;top:4px;width:155px;height:105px}
+.hero-corner-left::before{width:135px;height:5px;top:25px;left:0;transform:rotate(20deg)}
+.hero-corner-left::after{width:120px;height:5px;top:47px;left:0;transform:rotate(8deg)}
+.hero-corner-right{right:10px;bottom:92px;width:130px;height:90px}
+.hero-corner-right::before{width:125px;height:5px;right:0;top:35px;transform:rotate(155deg)}
+.hero-corner-right::after{width:105px;height:5px;right:0;top:58px;transform:rotate(170deg)}
+.mountain-art{position:relative;z-index:2;width:min(360px,82vw);height:92px;margin:0 auto -8px;color:var(--forest)}
+.mountain-art svg{width:100%;height:100%;position:relative;z-index:2}
+.sun{position:absolute;width:58px;height:58px;border-radius:50%;background:var(--gold);top:4px;left:calc(50% + 48px);opacity:.9}
+.brand-wrap{position:relative;z-index:3}
+.brand{
+  font-family:"Trebuchet MS", "Arial Black", sans-serif;
+  font-weight:900;
+  font-size:clamp(52px,15vw,88px);
+  line-height:.92;
+  letter-spacing:-.07em;
   color:var(--forest);
-  display:flex;
-  align-items:center;
-  gap:9px;
+  text-transform:uppercase;
+  text-shadow:0 1px 0 rgba(255,255,255,.35);
+  margin:0 auto 12px;
 }
+.brand-line{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--forest)}
+.brand-line span,.rooftop span{display:block;width:56px;height:3px;background:var(--gold);border-radius:10px}
+.brand-line b{font-size:clamp(20px,5vw,28px);letter-spacing:.16em;font-weight:700}
+.rooftop{display:flex;align-items:center;justify-content:center;gap:14px;font-size:clamp(16px,4vw,21px);letter-spacing:.28em;font-weight:500;margin-top:10px}
+.rooftop span{background:var(--olive);width:44px;height:2px}
+nav{
+  position:relative;z-index:5;
+  display:flex;gap:8px;overflow-x:auto;padding:17px 4px 12px;scrollbar-width:none;
+  margin-top:8px;
+}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:0 0 auto;color:var(--forest);text-decoration:none;border:1px solid rgba(23,77,58,.22);border-radius:999px;padding:8px 13px;font-size:13px;background:rgba(255,253,248,.78);backdrop-filter:blur(4px)}
+nav a span{margin-right:3px}
+main{max-width:760px;margin:0 auto;padding:20px 14px 44px}
+.intro{text-align:center;padding:4px 8px 18px}
+.intro-kicker{display:inline-block;color:var(--gold);font-size:10px;font-weight:700;letter-spacing:.22em;margin-bottom:7px}
+.intro h1{font-family:"Playfair Display",serif;font-size:34px;margin:0 0 5px;color:var(--forest)}
+.intro h1::after{content:"✦";display:block;font-family:system-ui,sans-serif;font-size:15px;color:var(--gold);margin-top:7px}
+.intro p{margin:0;color:var(--muted);font-size:14px}
+.section{position:relative;background:rgba(255,253,248,.96);border:1px solid var(--line);border-radius:18px;margin:0 0 16px;overflow:hidden;box-shadow:0 3px 14px rgba(48,38,25,.06)}
+.section::before{content:"";position:absolute;top:0;left:18px;right:18px;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.section h2{margin:0;padding:20px 18px 13px;font-family:"Playfair Display",serif;font-size:25px;color:var(--forest);display:flex;align-items:center;gap:9px}
 .section-icon{font-family:system-ui,sans-serif;font-size:22px}
 .items{padding:0 18px 8px}
-.item{
-  display:flex;
-  gap:16px;
-  justify-content:space-between;
-  padding:14px 0;
-  border-top:1px solid var(--line);
-}
-.item-main{min-width:0}
-.item-name{font-weight:700;font-size:16px;margin-bottom:4px}
-.item-name::after{
-  content:"";
-  display:inline-block;
-  width:5px;height:5px;
-  border-radius:50%;
-  background:var(--gold);
-  margin-left:7px;
-  vertical-align:middle;
-}
-.item-desc{color:var(--muted);font-size:13px;line-height:1.45}
-.price{font-weight:700;white-space:nowrap;font-size:15px;color:var(--forest)}
+.item{display:flex;gap:16px;justify-content:space-between;padding:14px 0;border-top:1px solid var(--line)}
+.item-main{min-width:0}.item-name{font-weight:700;font-size:16px;margin-bottom:4px}.item-name::after{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--gold);margin-left:7px;vertical-align:middle}.item-desc{color:var(--muted);font-size:13px;line-height:1.45}.price{font-weight:700;white-space:nowrap;font-size:15px;color:var(--forest)}
 .empty{padding:0 18px 20px;color:var(--muted);font-size:13px;font-style:italic}
-footer{text-align:center;padding:10px 20px 34px;color:var(--muted);font-size:12px}
-footer::before{content:"🌲  •  WINE & FOOD  •  ROOFTOP  •  🥝";display:block;margin-bottom:8px;color:var(--forest)}
-@media (min-width:700px){header{position:relative}.item{padding:17px 0}}
-
-.intro-kicker{
-  display:inline-block;
-  color:var(--gold);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.22em;
-  margin-bottom:8px;
-}
-.item-desc::first-letter{color:var(--forest)}
+footer{text-align:center;padding:4px 20px 36px;color:var(--muted);font-size:12px}
+.kiwi-art{width:145px;margin:0 auto 2px;color:var(--forest)}
+.kiwi-art svg{width:100%;height:auto;display:block}
+.footer-brand{font-family:"Playfair Display",serif;font-weight:700;color:var(--forest);font-size:18px;letter-spacing:.08em}
+.footer-sub{font-size:10px;letter-spacing:.22em;color:var(--gold);margin-top:5px}
+@media (min-width:700px){.item{padding:17px 0}.hero{padding-top:24px}.brand{font-size:96px}}

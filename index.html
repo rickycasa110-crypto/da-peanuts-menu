@@ -3,28 +3,55 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#24382c">
+  <meta name="theme-color" content="#174d3a">
   <meta name="description" content="Menù digitale DA PEANUTS — Wine & Food Rooftop">
   <title>DA PEANUTS — Wine & Food Rooftop</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <img class="logo" src="assets/logo-da-peanuts.jpg" alt="DA PEANUTS">
-    <p class="subtitle">Wine & Food • Rooftop</p>
+  <header class="hero">
+    <div class="hero-corner hero-corner-left"></div>
+    <div class="hero-corner hero-corner-right"></div>
+
+    <div class="mountain-art" aria-hidden="true">
+      <span class="sun"></span>
+      <svg viewBox="0 0 500 150" role="presentation">
+        <path d="M35 128 L145 63 L185 91 L262 20 L335 91 L382 58 L465 128" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M170 80 L185 91 L205 72 M246 38 L262 20 L279 42 M365 75 L382 58 L401 77" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div class="brand-wrap">
+      <div class="brand">DA PEANUTS</div>
+      <div class="brand-line"><span></span><b>WINE &amp; FOOD</b><span></span></div>
+      <div class="rooftop"><span></span>ROOFTOP<span></span></div>
+    </div>
+
     <nav id="nav" aria-label="Categorie del menù"></nav>
   </header>
 
   <main>
     <div class="intro">
-      <div class="intro-kicker">WINE & FOOD • ROOFTOP</div>
+      <div class="intro-kicker">DAL MATTINO ALL'APERITIVO</div>
       <h1>Il nostro menù</h1>
       <p>Colazione, cucina, aperitivo e vini da gustare con vista.</p>
     </div>
     <div id="content"></div>
   </main>
 
-  <footer>DA PEANUTS</footer>
+  <footer>
+    <div class="kiwi-art" aria-label="Kiwi, uccello nativo della Nuova Zelanda">
+      <svg viewBox="0 0 220 130" role="img" aria-hidden="true">
+        <ellipse cx="98" cy="72" rx="62" ry="39" fill="currentColor"/>
+        <circle cx="145" cy="49" r="27" fill="currentColor"/>
+        <path d="M160 52 Q194 52 216 60 Q190 65 158 62Z" fill="currentColor"/>
+        <path d="M76 103 L67 124 M108 104 L100 124" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="154" cy="43" r="3.5" fill="var(--cream)"/>
+      </svg>
+    </div>
+    <div class="footer-brand">DA PEANUTS</div>
+    <div class="footer-sub">WINE &amp; FOOD • ROOFTOP</div>
+  </footer>
 
   <script src="menu-data.js"></script>
   <script src="script.js"></script>
