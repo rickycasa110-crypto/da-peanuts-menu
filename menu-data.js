@@ -45,7 +45,7 @@ const MENU = {
   "Cocktail": [
     { nome: "Spritz", descrizione: "Aperol, Prosecco e soda", prezzo: "€ 7,00" },
     { nome: "Campari Spritz", descrizione: "Campari, Prosecco e soda", prezzo: "€ 7,00" },
-    { nome: "Piña Spritz al Sarti Rosa", descrizione: "Sarti Rosa, Prosecco e soda, con nota tropicale all’ananas", prezzo: "€ 8,00" },
+    { nome: "Piña Spritz", descrizione: "Sarti Rosa, Prosecco e soda, con nota tropicale all’ananas", prezzo: "€ 8,00" },
     { nome: "Hugo", descrizione: "Prosecco, sciroppo di sambuco, soda e menta", prezzo: "€ 7,00" },
     { nome: "Americano", descrizione: "Bitter, vermouth rosso e soda", prezzo: "€ 8,00" },
     { nome: "Negroni", descrizione: "Gin, bitter e vermouth rosso", prezzo: "€ 8,00" },
